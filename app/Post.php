@@ -20,7 +20,7 @@ class Post extends Model
         return $this->belongsTo(Category::tag);
     }
 
-//Y tiene pertenecer a muchas pero muchas etiquetas
+//Una categoria tiene y pertenece a muchas pero muchas etiquetas
     public function tags(){
         return $this->belongsToMany(Tag::class);
     }
