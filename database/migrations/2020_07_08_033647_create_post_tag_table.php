@@ -21,7 +21,7 @@ class CreatePostTagTable extends Migration
 
             //Relacion
             // $table->foreign('user_id')->references('id')->on('users');}
-            $table->foreign('post_id')->references('id')->on('post')
+            $table->foreign('post_id')->references('id')->on('posts')
             ->onDelete('cascade')
             ->onUpdate('cascade');
 
