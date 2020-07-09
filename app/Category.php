@@ -11,7 +11,7 @@ class Category extends Model
     ];
 
 //Una Categoria puede pertenecer a muchos Post
-    public function posts(){
+    public function posts(){ 
         return $this->hasMany(Post::class);
     }
 }
