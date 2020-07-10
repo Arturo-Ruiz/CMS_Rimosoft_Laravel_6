@@ -79,7 +79,9 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $tag= Tag::find($id);
+        $tag->fill($request->all())->save();
+        return redirect()->route('tags.edit', $tag->id)->with('info', 'Etiqueta Editada Con Exito');
     }
 
     /**
