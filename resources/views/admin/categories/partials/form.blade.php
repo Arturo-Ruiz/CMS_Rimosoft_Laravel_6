@@ -7,6 +7,10 @@
     {{ Form::label('slug', 'URL Amigable') }}
     {!! Form::text('slug', null, ['class'=>'form-control', 'id'=>'slug']) !!}
 </div>
+<div class="form-group">
+    {{ Form::label('body', 'Descripcion') }}
+    {!! Form::textarea('body', null, ['class'=>'form-control']) !!}
+</div>
 
 
 <div class="form-group">
