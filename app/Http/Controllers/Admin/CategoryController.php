@@ -83,7 +83,7 @@ class CategoryController extends Controller
     {
         $categories= Category::find($id);
         $categories->fill($request->all())->save();
-        return redirect()->route('categories.edit', $categories->id)->with('info', 'Etiqueta Editada Con Exito');
+        return redirect()->route('categories.edit', $categories->id)->with('info', 'Categoria Editada Con Exito');
     }
 
     /**
