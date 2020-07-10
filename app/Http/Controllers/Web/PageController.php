@@ -12,8 +12,9 @@ class PageController extends Controller
         $posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
         return view('web.posts', compact('posts'));
     }
+
     public function post($slug){
         $post = Post::where('slug', $slug)->first();
-        return view('web.posts', compact('post'));
+        return view('web.post', compact('post'));
     }
 }
