@@ -7,11 +7,11 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-headig">
-                        Crear Etiqueta
+                        Crear Categoria
                     </div>
                     <div class="panel-body">
-                        {!! Form::open(['route'=>'tags.store']) !!}
-                            @include('admin.tags.partials.form')
+                        {!! Form::open(['route'=>'categories.store']) !!}
+                            @include('admin.categories.partials.form')
                         {!! Form::close() !!}
                     </div>
                 </div>
