@@ -42,7 +42,7 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $tag = Tag::create($request->all());
     }
 
     /**
