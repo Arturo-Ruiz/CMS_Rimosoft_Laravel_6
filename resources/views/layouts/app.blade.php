@@ -50,9 +50,9 @@
                             @endif
                         @else
                         <li>
-                            <a href="{{ route('tags.index')}}">Etiquetas</a>
-                            <a href="{{ route('categories.index')}}">Categorias</a>
-                            <a href="{{ route('post.index')}}">Entradas</a>
+                            <a class="nav-link" href="{{ route('tags.index')}}">Etiquetas</a>
+                            <a class="nav-link" href="{{ route('categories.index')}}">Categorias</a>
+                            <a class="nav-link" href="{{ route('posts.index')}}">Entradas</a>
                         </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
