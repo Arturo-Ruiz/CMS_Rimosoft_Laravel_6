@@ -13,7 +13,7 @@ class TagStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class TagStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'required',
+            'slug'=>'required|unique:tags,slug',
         ];
     }
 }
