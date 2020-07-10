@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Request\TagStoreRequest;
+use App\Http\Request\TagUpdateRequest;
 use Illuminate\Http\Request;
 use App\Tag;
 
