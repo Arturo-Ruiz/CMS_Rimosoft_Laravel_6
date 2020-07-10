@@ -19,7 +19,8 @@ class TagController extends Controller
     public function index()
     {
         $tags = Tag::orderby('id', 'DESC')->paginate();
-        
+        // imprimir maravilla
+        // dd($tags);
         return view('admin.tags.index', compact('tags'));
     }
 
