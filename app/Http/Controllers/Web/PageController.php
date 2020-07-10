@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Category;
+use App\Post;
+
 
 class PageController extends Controller
 {
