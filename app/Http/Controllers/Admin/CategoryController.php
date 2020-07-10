@@ -3,10 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryStoreRequest;
+use App\Http\Requests\CategoryUpdateRequest;
 use Illuminate\Http\Request;
+use App\Category;
 
 class CategoryController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderby('id', 'DESC')->paginate();
+        // imprimir maravilla
+        // dd($tags);
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -24,7 +33,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -33,9 +42,10 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
-        //
+        $categories = Category::create($request->all());
+        return redirect()->route('categories.edit', $tag->id)->with('info', 'Categoria Creada Con Exito');
     }
 
     /**
@@ -46,7 +56,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $categories= Category::find($id);
+        return view('admin.categories.show', compact('categories'));
     }
 
     /**
@@ -57,7 +68,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories= Category::find($id);
+        return view('admin.categories.edit', compact('categories'));
     }
 
     /**
@@ -67,9 +79,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryUpdateRequest $request, $id)
     {
-        //
+        $categories= Category::find($id);
+        $categories->fill($request->all())->save();
+        return redirect()->route('categories.edit', $categories->id)->with('info', 'Etiqueta Editada Con Exito');
     }
 
     /**
@@ -80,6 +94,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories = Category::find($id)->delete();
+        return back()->with('info', 'Eliminado Correctamente');
     }
 }
