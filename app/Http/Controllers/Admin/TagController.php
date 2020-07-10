@@ -31,7 +31,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tags.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
