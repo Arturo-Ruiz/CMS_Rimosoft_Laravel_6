@@ -43,6 +43,7 @@ class TagController extends Controller
     public function store(Request $request)
     {
         $tag = Tag::create($request->all());
+        return redirect()->route('tags.edit', $tag->id)->with('info', 'Etiqueta Creada Con Exito');
     }
 
     /**
