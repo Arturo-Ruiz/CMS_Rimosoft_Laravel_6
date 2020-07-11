@@ -52,3 +52,16 @@
     {{ Form::submit('Guardar', ['class'=>'btn btn-sm btn-primary'])}}
 </div>
 
+@section('scripts')
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="{{asset('vendor/ckeditor/ckeditor.js')}}"></script>
+<script>
+  	$(document).ready(function(){
+	    CKEDITOR.config.height = 400;
+		CKEDITOR.config.width  = 'auto';
+		CKEDITOR.replace('body');
+	});
+
+
+</script>
+@endsection
