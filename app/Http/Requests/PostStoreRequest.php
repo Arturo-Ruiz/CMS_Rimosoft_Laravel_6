@@ -26,8 +26,8 @@ class PostStoreRequest extends FormRequest
         $rules = [
             'name'       =>'required',
             'slug'       =>'required|unique:posts,slug',
-            'user_id'    =>'required|interger',
-            'category_id'=>'required|interger',
+            'user_id'    =>'required|integer',
+            'category_id'=>'required|integer',
             'tags'       => 'required|array',
             'body'       =>'required',
             'status'     =>'required|in:DRAFT,PUBLISHED'
