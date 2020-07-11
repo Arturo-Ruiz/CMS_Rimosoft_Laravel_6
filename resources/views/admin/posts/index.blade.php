@@ -6,8 +6,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-headig">
-                        Lista de Categorias
-                        <a class="btn btn-sm btn-primary pull-right" href="{{ route('categories.create') }}">Crear</a>
+                        Lista de Post
+                        <a class="btn btn-sm btn-primary pull-right" href="{{ route('posts.create') }}">Crear</a>
                     </div>
                     <div class="panel-body">
                         <table class="table table-striped table-hover">
@@ -19,18 +19,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $category)
+                                @foreach ($posts as $post)
                                     <tr>
-                                        <td>{{$category->id}}</td>
-                                        <td>{{$category->name}}</td>
+                                        <td>{{$post->id}}</td>
+                                        <td>{{$post->name}}</td>
                                         <td width='10px'>
-                                            <a href="{{ route('categories.show', $category->id) }}" class="btn btn-sm btn-info">Ver</a>
+                                            <a href="{{ route('posts.show', $post->id) }}" class="btn btn-sm btn-info">Ver</a>
                                         </td>
                                         <td width='10px'>
-                                            <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-warning">Editar</a>
+                                            <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-warning">Editar</a>
                                         </td>
                                         <td width='10px'>
-                                            {!! Form::open(['route'=>['categories.destroy', $category->id],'method'=>'DELETE' ]) !!}
+                                            {!! Form::open(['route'=>['posts.destroy', $post->id],'method'=>'DELETE' ]) !!}
                                                 <button class="btn btn-sm btn-danger">
                                                     Eliminar
                                                 </button>
@@ -40,7 +40,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{$categories->render()}}
+                        {{$posts->render()}}
                     </div>
                 </div>
             </div>

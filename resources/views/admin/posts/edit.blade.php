@@ -7,11 +7,11 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-headig">
-                        Editar Categoria
+                        Editar Post
                     </div>
                     <div class="panel-body">
-                        {!! Form::model($category, ['route'=>['categories.update',$category->id], 'method'=> 'PUT']) !!}
-                            @include('admin.categories.partials.form')
+                        {!! Form::model($post, ['route'=>['posts.update',$post->id], 'method'=> 'PUT']) !!}
+                            @include('admin.posts.partials.form')
                         {!! Form::close() !!}
                     </div>
                 </div>

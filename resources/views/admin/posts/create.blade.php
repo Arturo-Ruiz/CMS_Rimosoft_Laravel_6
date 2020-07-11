@@ -7,11 +7,11 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-headig">
-                        Crear Categoria
+                        Crear Post
                     </div>
                     <div class="panel-body">
-                        {!! Form::open(['route'=>'categories.store']) !!}
-                            @include('admin.categories.partials.form')
+                        {!! Form::open(['route'=>'posts.store']) !!}
+                            @include('admin.posts.partials.form')
                         {!! Form::close() !!}
                     </div>
                 </div>
