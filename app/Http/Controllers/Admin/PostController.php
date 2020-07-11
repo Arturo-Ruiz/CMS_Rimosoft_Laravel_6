@@ -58,7 +58,7 @@ class PostController extends Controller
             $post->fill(['file' => asset($path)])->save();
         }
 
-        $post->tags->sync($request->get('tags'));
+        $post->tags()->attach($request->get('tags'));
 
 
         return redirect()->route('posts.edit', $post->id)->with('info', 'Post Creada Con Exito');
@@ -107,7 +107,7 @@ class PostController extends Controller
             $post->fill(['file' => asset($path)])->save();
         }
 
-        $post->tags->sync($request->get('tags'));
+        $post->tags()->sync($request->get('tags'));
 
 
         return redirect()->route('posts.edit', $post->id)->with('info', 'Post Editada Con Exito');
