@@ -7,6 +7,9 @@ use App\Http\Requests\PostStoreRequest;
 use App\Http\Requests\PostUpdateRequest;
 use Illuminate\Http\Request;
 use App\Post;
+use App\Category;
+use App\Tag;
+
 
 class PostController extends Controller
 {
@@ -34,7 +37,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        $tags = Tag::orderBy('name', 'ASC')->get();
+        return view('admin.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -69,8 +74,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        $tags = Tag::orderBy('name', 'ASC')->get();
         $post= Post::find($id);
-        return view('admin.posts.edit', compact('post'));
+        return view('admin.posts.edit', compact('categories','tags','post'));
     }
 
     /**
