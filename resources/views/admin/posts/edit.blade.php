@@ -10,7 +10,7 @@
                         Editar Post
                     </div>
                     <div class="panel-body">
-                        {!! Form::model($post, ['route'=>['posts.update',$post->id], 'method'=> 'PUT']) !!}
+                        {!! Form::model($post, ['route'=>['posts.update',$post->id], 'method'=> 'PUT', 'files'=>true ]) !!}
                             @include('admin.posts.partials.form')
                         {!! Form::close() !!}
                     </div>
