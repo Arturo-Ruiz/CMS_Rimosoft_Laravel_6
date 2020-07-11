@@ -20,7 +20,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderby('id', 'DESC')->paginate();
+        $posts = Post::orderby('id', 'DESC')
+        ->where('user_id', auth()->user()->id)->paginate();
         // imprimir maravilla
         // dd($tags);
         return view('admin.posts.index', compact('posts'));
